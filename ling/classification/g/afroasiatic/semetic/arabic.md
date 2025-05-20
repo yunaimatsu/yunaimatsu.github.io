@@ -3,10 +3,6 @@
     1. 分節音
         1. 母音
         2. 子音
-            | bilabial | labiodental | dental | alveolar | post-alveolar | palatal | retroflex | velar | uvular | pharyngeal |  | glottal |
-            | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-            |  |  |  |  |  |  |  |  |  |  |  |  |
-            |  |  |  |  |  |  |  |  |  |  |  |  |
     2. 超分節音
         1. 音節
             1. 声調
