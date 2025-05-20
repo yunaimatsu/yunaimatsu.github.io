@@ -1,5 +1,6 @@
 ## Grammatical tables in Latin
 
+
 ### Substantive
 | | Single | Plural |
 | --- | --- | --- |
