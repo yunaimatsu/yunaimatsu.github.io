@@ -8,52 +8,11 @@ import { Switch } from './components/ui/switch'
 import { Label } from './components/ui/label'
 import { Input } from './components/ui/input'
 import { Globe, RefreshCw, Play, Pause, Settings, Clock, Skull, Flag } from 'lucide-react'
+import { useLanguages, languageCodes, languageNames } from './localization/i18n'
 
-const languages = {
-  english: {
-    name: 'English',
-    texts: [
-      'The quick brown fox jumps over the lazy dog. This pangram contains all the letters of the English alphabet.',
-      'Programming is the process of creating a set of instructions that tell a computer how to perform a task.',
-      'Typing practice helps improve your speed and accuracy when using a keyboard.'
-    ]
-  },
-  spanish: {
-    name: 'Español',
-    texts: [
-      'El veloz zorro marrón salta sobre el perro perezoso. Este pangrama contiene todas las letras del alfabeto español.',
-      'La programación es el proceso de crear un conjunto de instrucciones que le dicen a una computadora cómo realizar una tarea.',
-      'La práctica de mecanografía ayuda a mejorar tu velocidad y precisión al usar un teclado.'
-    ]
-  },
-  french: {
-    name: 'Français',
-    texts: [
-      'Le rapide renard brun saute par-dessus le chien paresseux. Ce pangramme contient toutes les lettres de l\'alphabet français.',
-      'La programmation est le processus de création d\'un ensemble d\'instructions qui indiquent à un ordinateur comment effectuer une tâche.',
-      'La pratique de la dactylographie aide à améliorer votre vitesse et votre précision lors de l\'utilisation d\'un clavier.'
-    ]
-  },
-  japanese: {
-    name: '日本語',
-    texts: [
-      'いろはにほへと ちりぬるを わかよたれそ つねならむ うゐのおくやま けふこえて あさきゆめみし ゑひもせす',
-      'プログラミングとは、コンピュータに特定のタスクを実行するよう指示する一連の命令を作成するプロセスです。',
-      'タイピング練習は、キーボードを使用する際の速度と精度を向上させるのに役立ちます。'
-    ]
-  },
-  chinese: {
-    name: '中文',
-    texts: [
-      '快速的棕色狐狸跳过懒狗。这个句子包含了所有中文拼音的声母和韵母。',
-      '编程是创建一组指令的过程，这些指令告诉计算机如何执行任务。',
-      '打字练习有助于提高使用键盘时的速度和准确性。'
-    ]
-  }
-}
 
 function App() {
-  const [language, setLanguage] = useState<string>('english')
+  const [languageCode, setLanguageCode] = useState<string>('en')
   const [currentTextIndex, setCurrentTextIndex] = useState<number>(0)
   const [inputText, setInputText] = useState<string>('')
   const [startTime, setStartTime] = useState<number | null>(null)
@@ -73,8 +32,11 @@ function App() {
   const [gameOver, setGameOver] = useState<boolean>(false)
   const inputRef = useRef<HTMLInputElement>(null)
   const timerRef = useRef<number | null>(null)
-
-  const currentText = languages[language as keyof typeof languages].texts[currentTextIndex]
+  
+  const { languages, isLoading } = useLanguages()
+  
+  const currentLanguage = languages[languageCode]
+  const currentText = currentLanguage?.texts[currentTextIndex] || ''
 
   useEffect(() => {
     if (currentText && inputText) {
@@ -189,13 +151,13 @@ function App() {
   }, [])
 
   const changeText = useCallback(() => {
-    const nextIndex = (currentTextIndex + 1) % languages[language as keyof typeof languages].texts.length
+    const nextIndex = (currentTextIndex + 1) % (currentLanguage?.texts.length || 1)
     setCurrentTextIndex(nextIndex)
     resetExercise()
-  }, [currentTextIndex, language, resetExercise])
+  }, [currentTextIndex, currentLanguage, resetExercise])
 
   const handleLanguageChange = (value: string) => {
-    setLanguage(value)
+    setLanguageCode(value)
     setCurrentTextIndex(0)
     resetExercise()
   }
@@ -255,14 +217,20 @@ function App() {
             </Button>
             <div className="flex items-center gap-2">
               <Globe className="h-5 w-5 text-gray-500" />
-              <Select value={language} onValueChange={handleLanguageChange}>
+              <Select value={languageCode} onValueChange={handleLanguageChange}>
                 <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Select language" />
+                  <SelectValue placeholder={isLoading ? "Loading..." : "Select language"} />
                 </SelectTrigger>
                 <SelectContent>
-                  {Object.entries(languages).map(([key, value]) => (
-                    <SelectItem key={key} value={key}>{value.name}</SelectItem>
-                  ))}
+                  {isLoading ? (
+                    <SelectItem value="loading">Loading languages...</SelectItem>
+                  ) : (
+                    languageCodes.map((code) => (
+                      <SelectItem key={code} value={code}>
+                        {languages[code]?.name || languageNames[code]}
+                      </SelectItem>
+                    ))
+                  )}
                 </SelectContent>
               </Select>
             </div>
@@ -336,9 +304,15 @@ function App() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-lg leading-relaxed p-4 bg-gray-100 rounded-md min-h-[100px]">
-              {renderText()}
-            </div>
+            {isLoading ? (
+              <div className="text-lg leading-relaxed p-4 bg-gray-100 rounded-md min-h-[100px] flex items-center justify-center">
+                Loading language data...
+              </div>
+            ) : (
+              <div className="text-lg leading-relaxed p-4 bg-gray-100 rounded-md min-h-[100px]">
+                {renderText()}
+              </div>
+            )}
           </CardContent>
         </Card>
 
