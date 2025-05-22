@@ -76,7 +76,8 @@ function App() {
   useEffect(() => {
     if (startTime && elapsedTime > 0) {
       const minutes = elapsedTime / 60000
-      const words = inputText.length / 5
+      const correctChars = Math.max(0, inputText.length - totalMistakes)
+      const words = correctChars / 5
       const calculatedWpm = minutes > 0 ? Math.round(words / minutes) : 0
       setWpm(calculatedWpm)
 
