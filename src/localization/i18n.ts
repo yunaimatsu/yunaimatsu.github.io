@@ -54,7 +54,7 @@ export const languageNames: Record<string, string> = {
 
 export async function loadLanguage(code: string): Promise<Language> {
   try {
-    const response = await fetch(`/src/localization/languages/${code}.yaml`);
+    const response = await fetch(`/localization/languages/${code}.yaml`);
     const yamlText = await response.text();
     
     const yaml = await import('js-yaml');

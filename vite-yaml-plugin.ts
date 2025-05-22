@@ -15,7 +15,11 @@ export default function yamlPlugin() {
           };
         } catch (e) {
           const err = e as Error;
-          this.error(`Failed to parse YAML file ${id}: ${err.message}`);
+          console.error(`Failed to parse YAML file ${id}: ${err.message}`);
+          return {
+            code: `export default { error: "Failed to parse YAML file" };`,
+            map: null
+          };
         }
       }
     },
