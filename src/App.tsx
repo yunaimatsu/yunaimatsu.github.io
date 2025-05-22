@@ -8,11 +8,12 @@ import { Switch } from './components/ui/switch'
 import { Label } from './components/ui/label'
 import { Input } from './components/ui/input'
 import { Globe, RefreshCw, Play, Pause, Settings, Clock, Skull, Flag } from 'lucide-react'
-import { useLanguages, languageCodes, languageNames } from './localization/i18n'
+import { useLanguages, languageCodes, languageNames, UIString, getUIString } from './localization/i18n'
 
 
 function App() {
-  const [languageCode, setLanguageCode] = useState<string>('en')
+  const [uiLanguageCode, setUILanguageCode] = useState<string>('en')
+  const [typingLanguageCode, setTypingLanguageCode] = useState<string>('en')
   const [currentTextIndex, setCurrentTextIndex] = useState<number>(0)
   const [inputText, setInputText] = useState<string>('')
   const [startTime, setStartTime] = useState<number | null>(null)
@@ -35,7 +36,7 @@ function App() {
   
   const { languages, isLoading } = useLanguages()
   
-  const currentLanguage = languages[languageCode]
+  const currentLanguage = languages[typingLanguageCode]
   const currentText = currentLanguage?.texts[currentTextIndex] || ''
 
   useEffect(() => {
@@ -157,8 +158,12 @@ function App() {
     resetExercise()
   }, [currentTextIndex, currentLanguage, resetExercise])
 
-  const handleLanguageChange = (value: string) => {
-    setLanguageCode(value)
+  const handleUILanguageChange = (value: string) => {
+    setUILanguageCode(value)
+  }
+
+  const handleTypingLanguageChange = (value: string) => {
+    setTypingLanguageCode(value)
     setCurrentTextIndex(0)
     resetExercise()
   }
@@ -205,7 +210,9 @@ function App() {
     <div className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="max-w-4xl mx-auto">
         <header className="mb-8 flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-gray-900">Typing Practice</h1>
+          <h1 className="text-3xl font-bold text-gray-900">
+            {getUIString(languages, uiLanguageCode, UIString.TYPING_PRACTICE, 'en')}
+          </h1>
           <div className="flex items-center gap-4">
             <Button 
               variant="outline" 
@@ -214,26 +221,47 @@ function App() {
               className="flex items-center gap-1"
             >
               <Settings className="h-4 w-4" />
-              Settings
+              {getUIString(languages, uiLanguageCode, UIString.SETTINGS, 'en')}
             </Button>
-            <div className="flex items-center gap-2">
-              <Globe className="h-5 w-5 text-gray-500" />
-              <Select value={languageCode} onValueChange={handleLanguageChange}>
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder={isLoading ? "Loading..." : "Select language"} />
-                </SelectTrigger>
-                <SelectContent>
-                  {isLoading ? (
-                    <SelectItem value="loading">Loading languages...</SelectItem>
-                  ) : (
-                    languageCodes.map((code) => (
-                      <SelectItem key={code} value={code}>
-                        {languages[code]?.name || languageNames[code]}
-                      </SelectItem>
-                    ))
-                  )}
-                </SelectContent>
-              </Select>
+            <div className="flex flex-col gap-2 md:flex-row md:items-center">
+              <div className="flex items-center gap-2">
+                <Globe className="h-5 w-5 text-gray-500" />
+                <Select value={uiLanguageCode} onValueChange={handleUILanguageChange}>
+                  <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder={isLoading ? getUIString(languages, uiLanguageCode, UIString.LOADING, 'en') : getUIString(languages, uiLanguageCode, UIString.UI_LANGUAGE, 'en')} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {isLoading ? (
+                      <SelectItem value="loading">{getUIString(languages, uiLanguageCode, UIString.LOADING_LANGUAGES, 'en')}</SelectItem>
+                    ) : (
+                      languageCodes.map((code) => (
+                        <SelectItem key={code} value={code}>
+                          {languages[code]?.name || languageNames[code]}
+                        </SelectItem>
+                      ))
+                    )}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="flex items-center gap-2">
+                <Globe className="h-5 w-5 text-gray-500" />
+                <Select value={typingLanguageCode} onValueChange={handleTypingLanguageChange}>
+                  <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder={isLoading ? getUIString(languages, uiLanguageCode, UIString.LOADING, 'en') : getUIString(languages, uiLanguageCode, UIString.TYPING_LANGUAGE, 'en')} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {isLoading ? (
+                      <SelectItem value="loading">{getUIString(languages, uiLanguageCode, UIString.LOADING_LANGUAGES, 'en')}</SelectItem>
+                    ) : (
+                      languageCodes.map((code) => (
+                        <SelectItem key={code} value={code}>
+                          {languages[code]?.name || languageNames[code]}
+                        </SelectItem>
+                      ))
+                    )}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
           </div>
         </header>
@@ -241,7 +269,7 @@ function App() {
         {showSettings && (
           <Card className="mb-6">
             <CardHeader>
-              <CardTitle>Configuration</CardTitle>
+              <CardTitle>{getUIString(languages, uiLanguageCode, UIString.CONFIGURATION, 'en')}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -253,7 +281,7 @@ function App() {
                   />
                   <Label htmlFor="sudden-death" className="flex items-center gap-2">
                     <Skull className="h-4 w-4" />
-                    Sudden Death Mode
+                    {getUIString(languages, uiLanguageCode, UIString.SUDDEN_DEATH_MODE, 'en')}
                   </Label>
                 </div>
                 
@@ -265,14 +293,14 @@ function App() {
                   />
                   <Label htmlFor="game-over" className="flex items-center gap-2">
                     <Flag className="h-4 w-4" />
-                    Game Over Conditions
+                    {getUIString(languages, uiLanguageCode, UIString.GAME_OVER_CONDITIONS, 'en')}
                   </Label>
                 </div>
                 
                 <div className="flex flex-col space-y-2 md:col-span-2">
                   <Label htmlFor="time-limit" className="flex items-center gap-2">
                     <Clock className="h-4 w-4" />
-                    Time Limit (seconds)
+                    {getUIString(languages, uiLanguageCode, UIString.TIME_LIMIT, 'en')}
                   </Label>
                   <div className="flex items-center gap-4">
                     <Input 
@@ -285,7 +313,7 @@ function App() {
                       className="w-24"
                     />
                     <span className="text-sm text-gray-500">
-                      {timeLimit === 0 ? 'No time limit' : `${timeLimit} seconds`}
+                      {timeLimit === 0 ? getUIString(languages, uiLanguageCode, UIString.NO_TIME_LIMIT, 'en') : `${timeLimit} ${getUIString(languages, uiLanguageCode, UIString.SECONDS, 'en')}`}
                     </span>
                   </div>
                 </div>
@@ -297,17 +325,17 @@ function App() {
         <Card className="mb-6">
           <CardHeader>
             <CardTitle className="flex justify-between items-center">
-              <span>Text to Type</span>
+              <span>{getUIString(languages, uiLanguageCode, UIString.TEXT_TO_TYPE, 'en')}</span>
               <Button variant="outline" size="sm" onClick={changeText}>
                 <RefreshCw className="h-4 w-4 mr-2" />
-                New Text
+                {getUIString(languages, uiLanguageCode, UIString.NEW_TEXT, 'en')}
               </Button>
             </CardTitle>
           </CardHeader>
           <CardContent>
             {isLoading ? (
               <div className="text-lg leading-relaxed p-4 bg-gray-100 rounded-md min-h-[100px] flex items-center justify-center">
-                Loading language data...
+                {getUIString(languages, uiLanguageCode, UIString.LOADING_LANGUAGE_DATA, 'en')}
               </div>
             ) : (
               <div className="text-lg leading-relaxed p-4 bg-gray-100 rounded-md min-h-[100px]">
@@ -327,7 +355,7 @@ function App() {
                   size="lg"
                 >
                   <Play className="h-5 w-5 mr-2" />
-                  Start
+                  {getUIString(languages, uiLanguageCode, UIString.START, 'en')}
                 </Button>
               ) : (
                 <div className="relative">
@@ -339,7 +367,7 @@ function App() {
                     className={`w-full p-4 text-lg border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                       mistakes > 0 ? 'border-red-300' : 'border-gray-300'
                     }`}
-                    placeholder="Start typing here..."
+                    placeholder={getUIString(languages, uiLanguageCode, UIString.START_TYPING, 'en')}
                     disabled={!!endTime || gameOver}
                     autoFocus
                   />
@@ -358,11 +386,11 @@ function App() {
               
               {gameOver && (
                 <div className="bg-red-50 border border-red-200 rounded-md p-4 text-center">
-                  <p className="text-red-600 font-medium">Game Over!</p>
+                  <p className="text-red-600 font-medium">{getUIString(languages, uiLanguageCode, UIString.GAME_OVER, 'en')}</p>
                   <p className="text-sm text-gray-600 mt-1">
-                    {suddenDeath && mistakes > 0 ? 'Sudden death mode: You made a mistake!' : 
-                     timeLimit > 0 && elapsedTime >= timeLimit * 1000 ? 'Time limit reached!' : 
-                     'Game over'}
+                    {suddenDeath && mistakes > 0 ? getUIString(languages, uiLanguageCode, UIString.SUDDEN_DEATH_ERROR, 'en') : 
+                     timeLimit > 0 && elapsedTime >= timeLimit * 1000 ? getUIString(languages, uiLanguageCode, UIString.TIME_LIMIT_REACHED, 'en') : 
+                     getUIString(languages, uiLanguageCode, UIString.GAME_OVER_MESSAGE, 'en')}
                   </p>
                 </div>
               )}
@@ -373,16 +401,16 @@ function App() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-gray-500">Speed</CardTitle>
+              <CardTitle className="text-sm font-medium text-gray-500">{getUIString(languages, uiLanguageCode, UIString.SPEED, 'en')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-3xl font-bold">{wpm} <span className="text-sm font-normal text-gray-500">WPM</span></p>
+              <p className="text-3xl font-bold">{wpm} <span className="text-sm font-normal text-gray-500">{getUIString(languages, uiLanguageCode, UIString.WPM, 'en')}</span></p>
             </CardContent>
           </Card>
           
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-gray-500">Accuracy</CardTitle>
+              <CardTitle className="text-sm font-medium text-gray-500">{getUIString(languages, uiLanguageCode, UIString.ACCURACY, 'en')}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-3xl font-bold">{accuracy}%</p>
@@ -391,7 +419,7 @@ function App() {
           
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-gray-500">Time</CardTitle>
+              <CardTitle className="text-sm font-medium text-gray-500">{getUIString(languages, uiLanguageCode, UIString.TIME, 'en')}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-3xl font-bold">{formatTime(elapsedTime)}</p>
@@ -401,11 +429,11 @@ function App() {
 
         <div className="flex justify-between">
           <Button variant="outline" onClick={resetExercise}>
-            Reset
+            {getUIString(languages, uiLanguageCode, UIString.RESET, 'en')}
           </Button>
           {(endTime || gameOver) && (
             <Button onClick={changeText}>
-              Next Exercise
+              {getUIString(languages, uiLanguageCode, UIString.NEXT_EXERCISE, 'en')}
             </Button>
           )}
         </div>

@@ -4,6 +4,38 @@ export interface Language {
   code: string;
   name: string;
   texts: string[];
+  ui: Record<string, string>;
+}
+
+export enum UIString {
+  TYPING_PRACTICE = "typingPractice",
+  SETTINGS = "settings",
+  CONFIGURATION = "configuration",
+  SUDDEN_DEATH_MODE = "suddenDeathMode",
+  GAME_OVER_CONDITIONS = "gameOverConditions",
+  TIME_LIMIT = "timeLimit",
+  NO_TIME_LIMIT = "noTimeLimit",
+  SECONDS = "seconds",
+  TEXT_TO_TYPE = "textToType",
+  NEW_TEXT = "newText",
+  START = "start",
+  START_TYPING = "startTyping",
+  GAME_OVER = "gameOver",
+  SUDDEN_DEATH_ERROR = "suddenDeathError",
+  TIME_LIMIT_REACHED = "timeLimitReached",
+  GAME_OVER_MESSAGE = "gameOverMessage",
+  SPEED = "speed",
+  WPM = "wpm",
+  ACCURACY = "accuracy",
+  TIME = "time",
+  RESET = "reset",
+  NEXT_EXERCISE = "nextExercise",
+  LOADING = "loading",
+  SELECT_LANGUAGE = "selectLanguage",
+  LOADING_LANGUAGES = "loadingLanguages",
+  LOADING_LANGUAGE_DATA = "loadingLanguageData",
+  UI_LANGUAGE = "uiLanguage",
+  TYPING_LANGUAGE = "typingLanguage"
 }
 
 export const languageCodes = [
@@ -58,19 +90,21 @@ export async function loadLanguage(code: string): Promise<Language> {
     const yamlText = await response.text();
     
     const yaml = await import('js-yaml');
-    const data = yaml.load(yamlText) as { name: string; texts: string[] };
+    const data = yaml.load(yamlText) as { name: string; texts: string[]; ui?: Record<string, string> };
     
     return {
       code,
       name: data.name,
-      texts: data.texts
+      texts: data.texts,
+      ui: data.ui || {} // Handle case where ui translations might not exist yet
     };
   } catch (error) {
     console.error(`Failed to load language: ${code}`, error);
     return {
       code,
       name: languageNames[code] || code,
-      texts: ["Error loading language data. Please try again."]
+      texts: ["Error loading language data. Please try again."],
+      ui: {}
     };
   }
 }
@@ -104,4 +138,23 @@ export function useLanguages() {
   }, []);
 
   return { languages, isLoading, error };
+}
+
+export function getUIString(
+  languages: Record<string, Language>,
+  uiLanguageCode: string,
+  key: UIString,
+  fallbackLanguageCode: string = 'en'
+): string {
+  const uiLanguage = languages[uiLanguageCode];
+  if (uiLanguage?.ui && uiLanguage.ui[key]) {
+    return uiLanguage.ui[key];
+  }
+  
+  const fallbackLanguage = languages[fallbackLanguageCode];
+  if (fallbackLanguage?.ui && fallbackLanguage.ui[key]) {
+    return fallbackLanguage.ui[key];
+  }
+  
+  return key;
 }
