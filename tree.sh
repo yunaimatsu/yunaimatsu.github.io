@@ -4,7 +4,7 @@ TARGET_DIR="."                # Target directory to scan (current directory)
 OUTPUT_FILE="index.html"      # Output HTML filename
 
 # List of files to exclude from scanning
-EXCLUDES=("index.html" "style.css" "script.js" "README.md")
+EXCLUDES=("index.html" "style.css" "script.js" "README.md" "tree.sh")
 
 # Function to check if a file is excluded
 is_excluded() {
@@ -15,6 +15,15 @@ is_excluded() {
     fi
   done
   return 1                         # Return false (not excluded) if no match
+}
+
+# Convert "my-folder-name" → "My Folder Name"
+prettify_name() {
+  local raw="$1"
+  # Replace '-' with space
+  raw="${raw//-/ }"
+  # Capitalize each word
+  echo "$raw" | awk '{ for (i=1; i<=NF; i++) $i = toupper(substr($i,1,1)) substr($i,2) } 1'
 }
 
 # Recursive function to generate HTML list from directory using details/summary
@@ -32,31 +41,26 @@ generate_html() {
       continue                   # Skip excluded files
     fi
 
-    local name=$(basename "$item")    # Extract basename
+    # local name=$(basename "$item")    # Extract basename
+    local name=$(basename "$item")
+    local pretty_name=$(prettify_name "$name")
     local rel_path=$(realpath --relative-to="$TARGET_DIR" "$item")  # Relative path from target
 
     if [ -d "$item" ]; then
       # If directory, use <details> and <summary>
       echo "${indent}  <li>" >> "$OUTPUT_FILE"
       echo "${indent}    <details>" >> "$OUTPUT_FILE"
-      echo "${indent}      <summary>${name}</summary>" >> "$OUTPUT_FILE"
+      echo "${indent}      <summary>${pretty_name}</summary>" >> "$OUTPUT_FILE"
       generate_html "$item" "      $indent"   # Recurse with deeper indent
       echo "${indent}    </details>" >> "$OUTPUT_FILE"
       echo "${indent}  </li>" >> "$OUTPUT_FILE"
     elif [ -f "$item" ]; then
       # If file, check extension
       local ext="${name##*.}"
-    #   if [[ "$ext" == "html" ]]; then
-    #     # HTML files get a link
-    #     echo "${indent}  <li><a href=\"./$rel_path\">${name%.*}</a></li>" >> "$OUTPUT_FILE"
-    #   else
-    #     # Other files just get a list item without link
-    #     echo "${indent}  <li>${name}</li>" >> "$OUTPUT_FILE"
-    #   fi
-    # Detect file extensions for HTML and MD
+      # Detect file extensions for HTML and MD
         if [[ "$ext" == "html" || "$ext" == "md" ]]; then
         # Remove file extension for display
-        local display_name="${name%.*}"
+        local display_name=$(prettify_name "${name%.*}")
         echo "${indent}  <li><a href=\"./$rel_path\">${display_name}</a></li>" >> "$OUTPUT_FILE"
         else
         echo "${indent}  <li>${name}</li>" >> "$OUTPUT_FILE"
@@ -91,40 +95,38 @@ cat <<EOF > "$OUTPUT_FILE"
 EOF
 
 # Loop over top-level items in the target directory
-for item in "$TARGET_DIR"/*; do
-  [ -e "$item" ] || continue          # Skip if not exist
-  if is_excluded "$item"; then
-    continue                         # Skip excluded files
-  fi
-  local name=$(basename "$item")      # Get basename
-  if [ -d "$item" ]; then
-    # Directory at root level: add details/summary and recurse
-    echo "    <li>" >> "$OUTPUT_FILE"
-    echo "      <details>" >> "$OUTPUT_FILE"
-    echo "        <summary>$name</summary>" >> "$OUTPUT_FILE"
-    generate_html "$item" "        "
-    echo "      </details>" >> "$OUTPUT_FILE"
-    echo "    </li>" >> "$OUTPUT_FILE"
-  elif [ -f "$item" ]; then
-    # File at root level
-    local ext="${name##*.}"          # Get file extension
-    # if [[ "$ext" == "html" ]]; then
-    #   # HTML file gets a link
-    #   echo "    <li><a href=\"./$name\">${name%.*}</a></li>" >> "$OUTPUT_FILE"
-    # else
-    #   # Other file just listed without link
-    #   echo "    <li>$name</li>" >> "$OUTPUT_FILE"
-    # fi
-    # Detect file extensions for HTML and MD
-    if [[ "$ext" == "html" || "$ext" == "md" ]]; then
-    # Remove file extension for display
-    local display_name="${name%.*}"
-    echo "${indent}  <li><a href=\"./$rel_path\">${display_name}</a></li>" >> "$OUTPUT_FILE"
-    else
-    echo "${indent}  <li>${name}</li>" >> "$OUTPUT_FILE"
+loop_top(){
+    for item in "$TARGET_DIR"/*; do
+    [ -e "$item" ] || continue          # Skip if not exist
+    if is_excluded "$item"; then
+        continue                         # Skip excluded files
     fi
-  fi
-done
+        # local name=$(basename "$item")      # Get basename
+        local name=$(basename "$item")
+        local pretty_name=$(prettify_name "$name")
+    if [ -d "$item" ]; then
+        echo "    <li>" >> "$OUTPUT_FILE"
+        echo "      <details>" >> "$OUTPUT_FILE"
+        echo "        <summary>${pretty_name}</summary>" >> "$OUTPUT_FILE"
+        generate_html "$item" "          "   # Increase indentation consistently
+        echo "      </details>" >> "$OUTPUT_FILE"
+        echo "    </li>" >> "$OUTPUT_FILE"
+    elif [ -f "$item" ]; then
+        # File at root level
+        local ext="${name##*.}"          # Get file extension
+        # Detect file extensions for HTML and MD
+        if [[ "$ext" == "html" || "$ext" == "md" ]]; then
+        # Remove file extension for display
+        local display_name=$(prettify_name "${name%.*}")
+        echo "${indent}  <li><a href=\"./$rel_path\">${display_name}</a></li>" >> "$OUTPUT_FILE"
+        else
+        echo "${indent}  <li>${name}</li>" >> "$OUTPUT_FILE"
+        fi
+    fi
+    done
+}
+
+loop_top
 
 # Close the list and HTML body
 cat <<EOF >> "$OUTPUT_FILE"
