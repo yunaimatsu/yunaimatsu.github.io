@@ -1,59 +1,321 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" /> 
-    <title>yunai</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <ul id="tree">
-      <li class="folder">インド・ヨーロッパ語族
-        <ul class="children">
-          <li class="folder">ゲルマン語派
-            <ul class="children">
-              <li><a href="/languages/german.html">ドイツ語</a></li>
-              <li><a href="/languages/english.html">英語</a></li>
-            </ul>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Directory Tree</title>
+  <style>
+    ul { list-style: none; padding-left: 1em; }
+    details > summary {
+      cursor: pointer;
+      font-weight: bold;
+      user-select: none;
+    }
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <ul id="tree">
+    <li>
+      <details>
+        <summary></summary>
+        <ul>
+          <li><a href="./essay/minimal-dev.md">minimal-dev</a></li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary></summary>
+        <ul>
+          <li>
+            <details>
+              <summary>classification</summary>
+              <ul>
+                <li>
+                  <details>
+                    <summary>g</summary>
+                    <ul>
+                      <li>
+                        <details>
+                          <summary>afroasiatic</summary>
+                          <ul>
+                            <li>
+                              <details>
+                                <summary>semetic</summary>
+                                <ul>
+                                  <li><a href="./ling/classification/g/afroasiatic/semetic/arabic.md">arabic</a></li>
+                                </ul>
+                              </details>
+                            </li>
+                          </ul>
+                        </details>
+                      </li>
+                      <li>
+                        <details>
+                          <summary>eskaleut</summary>
+                          <ul>
+                            <li>
+                              <details>
+                                <summary>eskimoan</summary>
+                                <ul>
+                                  <li>
+                                    <details>
+                                      <summary>yupik</summary>
+                                      <ul>
+                                        <li>
+                                          <details>
+                                            <summary>alutiiq</summary>
+                                            <ul>
+                                              <li><a href="./ling/classification/g/eskaleut/eskimoan/yupik/alutiiq/introduction.md">introduction</a></li>
+                                            </ul>
+                                          </details>
+                                        </li>
+                                        <li>
+                                          <details>
+                                            <summary>central-alaskan</summary>
+                                            <ul>
+                                              <li><a href="./ling/classification/g/eskaleut/eskimoan/yupik/central-alaskan/introduction.md">introduction</a></li>
+                                            </ul>
+                                          </details>
+                                        </li>
+                                        <li>
+                                          <details>
+                                            <summary>central-siberian</summary>
+                                            <ul>
+                                              <li><a href="./ling/classification/g/eskaleut/eskimoan/yupik/central-siberian/introduction.md">introduction</a></li>
+                                            </ul>
+                                          </details>
+                                        </li>
+                                        <li>
+                                          <details>
+                                            <summary>naukan</summary>
+                                            <ul>
+                                              <li><a href="./ling/classification/g/eskaleut/eskimoan/yupik/naukan/introduction.md">introduction</a></li>
+                                            </ul>
+                                          </details>
+                                        </li>
+                                        <li><a href="./ling/classification/g/eskaleut/eskimoan/yupik/phonology.md">phonology</a></li>
+                                        <li>
+                                          <details>
+                                            <summary>sirenik</summary>
+                                            <ul>
+                                              <li><a href="./ling/classification/g/eskaleut/eskimoan/yupik/sirenik/introduction.md">introduction</a></li>
+                                            </ul>
+                                          </details>
+                                        </li>
+                                      </ul>
+                                    </details>
+                                  </li>
+                                </ul>
+                              </details>
+                            </li>
+                          </ul>
+                        </details>
+                      </li>
+                      <li>
+                        <details>
+                          <summary>indo-european</summary>
+                          <ul>
+                            <li><a href="./ling/classification/g/indo-european/introduction.md">introduction</a></li>
+                            <li>
+                              <details>
+                                <summary>italo-celtic</summary>
+                                <ul>
+                                  <li>
+                                    <details>
+                                      <summary>italic</summary>
+                                      <ul>
+                                        <li>
+                                          <details>
+                                            <summary>latino-faliscan</summary>
+                                            <ul>
+                                              <li>
+                                                <details>
+                                                  <summary>faliscan</summary>
+                                                  <ul>
+                                                    <li><a href="./ling/classification/g/indo-european/italo-celtic/italic/latino-faliscan/faliscan/introduction.md">introduction</a></li>
+                                                  </ul>
+                                                </details>
+                                              </li>
+                                              <li><a href="./ling/classification/g/indo-european/italo-celtic/italic/latino-faliscan/introduction.md">introduction</a></li>
+                                              <li>
+                                                <details>
+                                                  <summary>lanuvian</summary>
+                                                  <ul>
+                                                    <li><a href="./ling/classification/g/indo-european/italo-celtic/italic/latino-faliscan/lanuvian/introduction.md">introduction</a></li>
+                                                  </ul>
+                                                </details>
+                                              </li>
+                                              <li>
+                                                <details>
+                                                  <summary>latin</summary>
+                                                  <ul>
+                                                    <li>
+                                                      <details>
+                                                        <summary>iberian</summary>
+                                                        <ul>
+                                                          <li><a href="./ling/classification/g/indo-european/italo-celtic/italic/latino-faliscan/latin/iberian/historical-phonology.md">historical-phonology</a></li>
+                                                        </ul>
+                                                      </details>
+                                                    </li>
+                                                    <li><a href="./ling/classification/g/indo-european/italo-celtic/italic/latino-faliscan/latin/introduction.md">introduction</a></li>
+                                                    <li><a href="./ling/classification/g/indo-european/italo-celtic/italic/latino-faliscan/latin/nomen.md">nomen</a></li>
+                                                  </ul>
+                                                </details>
+                                              </li>
+                                              <li>
+                                                <details>
+                                                  <summary>praenestine</summary>
+                                                  <ul>
+                                                    <li><a href="./ling/classification/g/indo-european/italo-celtic/italic/latino-faliscan/praenestine/introduction.md">introduction</a></li>
+                                                  </ul>
+                                                </details>
+                                              </li>
+                                              <li>
+                                                <details>
+                                                  <summary>siculian</summary>
+                                                  <ul>
+                                                    <li><a href="./ling/classification/g/indo-european/italo-celtic/italic/latino-faliscan/siculian/introduction.md">introduction</a></li>
+                                                  </ul>
+                                                </details>
+                                              </li>
+                                            </ul>
+                                          </details>
+                                        </li>
+                                      </ul>
+                                    </details>
+                                  </li>
+                                </ul>
+                              </details>
+                            </li>
+                          </ul>
+                        </details>
+                      </li>
+                      <li>
+                        <details>
+                          <summary>nilo-saharan</summary>
+                          <ul>
+                            <li>
+                              <details>
+                                <summary>songhay</summary>
+                                <ul>
+                                  <li><a href="./ling/classification/g/nilo-saharan/songhay/zarma.md">zarma</a></li>
+                                </ul>
+                              </details>
+                            </li>
+                          </ul>
+                        </details>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
           </li>
-          <li class="folder">ロマンス語派
-            <ul class="children">
-              <li><a href="/languages/french.html">フランス語</a></li>
-            </ul>
+          <li><a href="./ling/classification.md">classification</a></li>
+          <li>
+            <details>
+              <summary>description</summary>
+              <ul>
+                <li>
+                  <details>
+                    <summary>speech</summary>
+                    <ul>
+                      <li><a href="./ling/description/speech/ipa.html">ipa</a></li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="./ling/notes.md">notes</a></li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary></summary>
+        <ul>
+          <li>
+            <details>
+              <summary>api</summary>
+              <ul>
+                <li><a href="./tech/api/google-api.md">google-api</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>ecmascript</summary>
+              <ul>
+                <li><a href="./tech/ecmascript/dom-manipulation.md">dom-manipulation</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>linux</summary>
+              <ul>
+                <li>
+                  <details>
+                    <summary>directories</summary>
+                    <ul>
+                      <li>
+                        <details>
+                          <summary>boot</summary>
+                          <ul>
+                            <li><a href="./tech/linux/directories/boot/overview.md">overview</a></li>
+                          </ul>
+                        </details>
+                      </li>
+                      <li><a href="./tech/linux/directories/overview.md">overview</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li><a href="./tech/linux/distros.md">distros</a></li>
+                <li><a href="./tech/linux/environment-variable.md">environment-variable</a></li>
+                <li>
+                  <details>
+                    <summary>file-system</summary>
+                    <ul>
+                      <li><a href="./tech/linux/file-system/inode.md">inode</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>pwoer-on</summary>
+                    <ul>
+                      <li>
+                        <details>
+                          <summary>bootloader</summary>
+                          <ul>
+                            <li><a href="./tech/linux/pwoer-on/bootloader/overview.md">overview</a></li>
+                          </ul>
+                        </details>
+                      </li>
+                      <li>
+                        <details>
+                          <summary>firmware</summary>
+                          <ul>
+                            <li><a href="./tech/linux/pwoer-on/firmware/overview.md">overview</a></li>
+                          </ul>
+                        </details>
+                      </li>
+                      <li><a href="./tech/linux/pwoer-on/overview.md">overview</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li><a href="./tech/linux/user-group.md">user-group</a></li>
+              </ul>
+            </details>
           </li>
         </ul>
-      </li>
-      <li class="folder">ウラル語族
-        <ul class="children">
-          <li><a href="/languages/finnish.html">フィンランド語</a></li>
-        </ul>
-      </li>
-    </ul>
-    <style>
-      ul { list-style: none; padding-left: 1em; }
-      .folder::before { content: '▶'; margin-right: 5px; cursor: pointer; }
-      .folder.open::before { content: '▼'; }
-      .children { display: none; margin-left: 1em; }
-      .folder.open > .children { display: block; }
-    </style>
-    <script>
-      document.querySelectorAll('.folder').forEach(folder => {
-        folder.addEventListener('click', e => {
-          if (e.target === folder) {
-            folder.classList.toggle('open');
-          }
-        });
-      });
-    </script>
-    <div id="linguistics">
-      <h3>Linguistics</h3>
-      <a href='ling/classification.md'>Language Classification</a>
-    </div>
-    <div id="history">
-      <h3>History</h3>
-    </div>
-    <div id="tech">
-      <h3>Tech</h3>
-    </div>
-  </body>
+      </details>
+    </li>
+  <li></li>
+  </ul>
+</body>
 </html>
