@@ -6,6 +6,9 @@ OUTPUT_FILE="index.html"      # Output HTML filename
 # List of files to exclude from scanning
 EXCLUDES=("index.html" "style.css" "script.js" "README.md" "tree.sh" "favicon.jpeg")
 
+# Clear the output file completely at the start
+> "$OUTPUT_FILE"
+
 # Function to check if a file is excluded
 is_excluded() {
   local filename=$(basename "$1")  # Get basename of the path
