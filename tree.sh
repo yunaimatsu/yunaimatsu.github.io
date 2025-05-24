@@ -4,7 +4,7 @@ TARGET_DIR="."                # Target directory to scan (current directory)
 OUTPUT_FILE="index.html"      # Output HTML filename
 
 # List of files to exclude from scanning
-EXCLUDES=("index.html" "style.css" "script.js" "README.md" "tree.sh")
+EXCLUDES=("index.html" "style.css" "script.js" "README.md" "tree.sh" "favicon.jpeg")
 
 # Function to check if a file is excluded
 is_excluded() {
@@ -36,7 +36,6 @@ generate_html() {
   # Loop over sorted contents of the directory
   for item in "$dir_path"/*; do
     [ -e "$item" ] || continue   # Skip if item does not exist (safe check)
-
     if is_excluded "$item"; then
       continue                   # Skip excluded files
     fi
@@ -45,6 +44,10 @@ generate_html() {
     local name=$(basename "$item")
     local pretty_name=$(prettify_name "$name")
     local rel_path=$(realpath --relative-to="$TARGET_DIR" "$item")  # Relative path from target
+    local link_path="$rel_path"
+    if [[ "$link_path" == *.md ]]; then
+      link_path="${link_path%.md}"
+    fi
 
     if [ -d "$item" ]; then
       # If directory, use <details> and <summary>
@@ -61,7 +64,7 @@ generate_html() {
         if [[ "$ext" == "html" || "$ext" == "md" ]]; then
         # Remove file extension for display
         local display_name=$(prettify_name "${name%.*}")
-        echo "${indent}  <li><a href=\"./$rel_path\">${display_name}</a></li>" >> "$OUTPUT_FILE"
+        echo "${indent}  <li><a href=\"./$link_path\">${display_name}</a></li>" >> "$OUTPUT_FILE"
         else
         echo "${indent}  <li>${name}</li>" >> "$OUTPUT_FILE"
         fi
@@ -118,7 +121,7 @@ loop_top(){
         if [[ "$ext" == "html" || "$ext" == "md" ]]; then
         # Remove file extension for display
         local display_name=$(prettify_name "${name%.*}")
-        echo "${indent}  <li><a href=\"./$rel_path\">${display_name}</a></li>" >> "$OUTPUT_FILE"
+        echo "${indent}  <li><a href=\"./$link_path\">${display_name}</a></li>" >> "$OUTPUT_FILE"
         else
         echo "${indent}  <li>${name}</li>" >> "$OUTPUT_FILE"
         fi
