@@ -65,3 +65,6 @@ Random Sources	/dev/random, /dev/urandom	Entropy generators
 Time/Clock	/dev/rtc, /dev/ptmx	Real-time clock, PTY master
 
 ### Special Devices
+
+## `/run`
+/run is a RAM-based (tmpfs) filesystem, meaning it exists only in memory and is cleared on reboot.
