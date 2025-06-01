@@ -4,7 +4,7 @@ TARGET_DIR="."                # Target directory to scan (current directory)
 OUTPUT_FILE="index.html"      # Output HTML filename
 
 # List of files to exclude from scanning
-EXCLUDES=("index.html" "style.css" "script.js" "README.md" "tree.sh" "favicon.jpeg")
+EXCLUDES=("index.html" "style.css" "script.js" "README.md" "tree.sh")
 
 # Clear the output file completely at the start
 > "$OUTPUT_FILE"
