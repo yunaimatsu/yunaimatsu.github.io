@@ -1,6 +1,14 @@
-# `mount`は、見えるようにしただけ！
+## Steps to `mount`
 
-## `mount`する方法
+```sh
+sudo mkdir /mnt/<target-dir>
+sudo mount /dev/<dev-name> /mnt/<target-dir>
+```
+`mount $1 $2` をすると、 `$1` を `$2` につなげられる。
+> ソフトリンクとの違い
+
+- `Softlink`: 参照を作る
+- `Mount`: カーネルレベルで接続する
 
 ## `mount`されたファイルを確認する方法
 
@@ -13,12 +21,6 @@ $ tree
 ├── folder1
 │   └── file.txt
 └── folder2
-```
-
-### 🛠 Command:
-
-```bash
-mv folder1/file.txt folder2/
 ```
 
 ### 📦 Result:
@@ -57,12 +59,6 @@ USB
     └── fileB.txt
 ```
 
-### 🛠 Command:
-
-```bash
-sudo mount /dev/sdb1 mymount/
-```
-
 ### 📂 Result (after mounting):
 
 ```bash
@@ -88,54 +84,3 @@ $ tree
   ├── mymount/
   └── somefile.txt
   ```
-
----
-
-## 🔁 Summary of Effects
-
-| Command | Changes file structure?  | Persistent? | Cross-device? | Example effect |
-| ------- | ------------------------ | ----------- | ------------- | -------------- |
-| `mv`    | ✅ Yes                    | ✅ Yes       | ✅ Yes         | Moves files    |
-| `mount` | ❌ No (not file contents) | ❌ No        | ✅ Yes         | Shows other FS |
-
-
-simulate something more complex like mounting over a **non-empty folder** or using **bind mounts**.
-
-
-In the context of **Linux** (and Unix-like systems), **"to mount"** means to **make a filesystem accessible at a certain point in the directory tree**.
-
-### More specifically:
-
-* When you **mount** a storage device (like a USB drive, hard disk partition, or ISO file), you're telling the operating system to **associate** that device or filesystem with a **directory** (called a **mount point**) in your file system hierarchy.
-* After mounting, you can access the files on that device through the designated directory.
-
----
-
-### Example:
-
-```bash
-mount /dev/sdb1 /mnt/usb
-```
-
-This command:
-
-* Mounts the device `/dev/sdb1` (e.g., a USB drive)
-* At the directory `/mnt/usb`
-* Now you can access the contents of the USB drive via `/mnt/usb`
-
----
-
-### Key Concepts:
-
-* **Mount Point**: A directory where the filesystem is made available.
-* **Unmounting**: The process of detaching the filesystem using `umount`, e.g., `umount /mnt/usb`.
-
----
-
-### Related Notes:
-
-* Linux has a **single directory tree** starting at `/`. All filesystems must be mounted into this tree somewhere.
-* Devices aren’t automatically browsable unless mounted.
-* Automounting tools (like `udev` or desktop environments) often mount devices for you.
-
-Let me know if you’d like examples with `fstab`, loopback mounts, or how to mount network drives (like NFS or SMB).
