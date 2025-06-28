@@ -70,11 +70,13 @@
               "type": "markdown",
               "state": {
                 "file": "tech/linux/installation/Ventoy.md",
+                "file": "tech/linux/network/bluemoon.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "Ventoy"
+              "title": "bluemoon"
             }
           }
         ],
@@ -107,6 +109,7 @@
           "type": "search",
           "state": {
             "query": "target",
+            "query": "",
             "matchingCase": false,
             "explainSearch": false,
             "collapseAll": false,
@@ -156,6 +159,7 @@
           "type": "backlink",
           "state": {
             "file": "tech/linux/file-system/examples/overview.md",
+            "file": "tech/linux/network/bluemoon.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -215,6 +219,7 @@
     "tech/linux/file-system/examples/overview.md",
     "tech/linux/shell/Untitled.md",
     "tech/linux/directories/filesystem-hierarchy-standard.md",
+    "tech/linux/shell/Untitled.md",
     "tech/linux/network/bluemoon.md",
     "ling/classification/g/american-indigenous-languages.md",
     "browser-engines.md",

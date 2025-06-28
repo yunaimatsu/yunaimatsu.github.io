@@ -1,0 +1,5 @@
+log_date="date '+%Y-%m-%d-%H-%M'"
+git add .
+git commit -m "$log_date"
+git push -u origin
+gh pr create --title "$log_date" --body ""
