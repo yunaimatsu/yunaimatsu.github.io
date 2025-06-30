@@ -5,4 +5,4 @@ git add .
 git commit -m "$log_date"
 git push -u origin
 gh pr create --title "$log_date" --body ""
-echo "Backup executed" >> .log
+echo "date +"%Y-%m-%d %H:%M:%S Backup executed" >> .log
