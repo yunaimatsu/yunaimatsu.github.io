@@ -1,0 +1,7 @@
+name: Merge and Squash
+
+on: 
+  pull_request:
+    types:
+      - opened
+  

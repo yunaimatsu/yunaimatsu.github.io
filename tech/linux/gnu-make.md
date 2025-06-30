@@ -1,21 +1,36 @@
-# Makefile
-## Define the shell type
+## Top-level
+### Define the shell type
 ```Makefile
 SHELL:= /bin/zsh
 ```
 
-## Define variables
+### Define variables
 ```Makefile
 <VARIABLE>:= <VALUE>
 ```
+### Call variables
+`$` must be escaped with `$` in Makefile.
+```Makefile
+$$<VARIABLE>
+```
+
+### Import external files
+```Makefile
+include <FILE_PATH>
+```
 
 ## Target
+Target is the unique name of a bundle of some setup tasks(recipes).
+Target name can be used parameters of `make` command in CLI.
 ## Recipe
-One-line in recipe corresponds to one shell process.
-
+Each line in a recipe corresponds to one shell process so the multiple-lines have to be broken with `\` at the end of line.
+Each line must start with `<tab>`, not `<space>`.
 ```Makefile
 <taget>: <prerequisites>
-    recipe
+    recipe1 \
+    recipe2 \
+    recipe3 \
+    recipe4
 ```
 Expand variable with `$$<var>`
 Recipe is written in shell script.
