@@ -11,19 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout PR branch
+    - name: Set up Git 
       uses: actions/checkout@v4
       with:
         ref: ${{ github.head_ref }}
         fetch-depth: 0  # full history for merging
-
-    - name: Set up Git
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
-
-    - name: Add main as remote tracking
-      run: |
         git remote add upstream https://github.com/${{ github.repository }}.git
         git fetch upstream main
 
@@ -62,4 +57,5 @@ jobs:
           }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
 
