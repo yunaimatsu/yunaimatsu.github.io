@@ -1,7 +1,6 @@
 ## freedesktop.org(fd.o), **X Desktop Group (XDG)**
 interoperability and shared base technology 
 https://www.freedesktop.org/
-
 https://share.google/4MMnNQLn5RG3x3JDW
 ## User-specific
 ### `$HOME`
