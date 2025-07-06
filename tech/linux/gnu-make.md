@@ -6,12 +6,14 @@ SHELL:= /bin/zsh
 
 ### Define variables
 ```Makefile
-<VARIABLE>:= <VALUE>
+<VAR>:= <VAL>
 ```
 ### Call variables
+> Reference recipe shell variable
 `$` must be escaped with `$` in Makefile.
 ```Makefile
-$$<VARIABLE>
+$$<VAR>
+$(<VAR>)
 ```
 
 ### Import external files
