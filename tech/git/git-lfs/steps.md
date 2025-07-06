@@ -6,3 +6,4 @@ git add <large-files>
 git commit -m'<commit-message>' # Commit .gitattributes and large files at the same time
 git push
 ```
+
