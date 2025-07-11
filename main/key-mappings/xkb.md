@@ -1,87 +1,74 @@
-In Arch Linux, key bindings and key remapping can be managed in several ways, depending on your desktop environment, window manager, or if you're working in a barebones setup. Here's a general guide to help you get started:
+XKB layouts refer to keyboard layouts managed by the X Keyboard
+Extension (XKB) in X11, the windowing system used by many Unix-like
+operating systems (like Linux and BSD). XKB handles how key presses
+on a keyboard are interpreted and allows for complex configuration
+of keyboard behavior.
 
-🔧 Key Remapping in Arch Linux
-1. Using setxkbmap (Temporary Changes)
-For simple remapping (like swapping Caps Lock and Control):
-```sh
-setxkbmap -option ctrl:swapcaps
-```
-This change is temporary and will reset after reboot or logout.
+🔹 What is XKB?
+XKB (X Keyboard Extension) is an extension to the X11 protocol that
+provides enhanced control over keyboard behavior, including:
 
-Use setxkbmap -option to clear options.
+Key remapping (changing what each key does)
 
-2. Using xmodmap
-xmodmap gives you more control. First, get the keycode:
-```sh
-xev | grep keycode
-```
-Then create a .Xmodmap file in your home directory:
+Multiple layouts and switching between them (e.g., QWERTY, AZERTY,
+Dvorak)
 
-```sh
-vi ~/.Xmodmap
-```
-Example to remap Caps Lock to Escape:
-```
-remove Lock = Caps_Lock
-keysym Caps_Lock = Escape
-```
-Then apply with:
-xmodmap ~/.Xmodmap
-Make it persistent by adding to .xinitrc or .xprofile:
+Modifier keys and advanced combinations (Ctrl, Alt, Shift, etc.)
 
-xmodmap ~/.Xmodmap &
+Key repeat behavior
 
-3. Using udev/hwdb (For low-level remapping)
-More complex and persistent system-wide remaps.
+LED indicator control
 
-Find your device with:
+🔹 What is an XKB Layout?
+An XKB layout is essentially a map that defines what each key does
+for a given language or input style. For example:
 
-libinput list-devices
-Create or edit the hwdb file:
+us → US QWERTY layout
 
-sudo nano /etc/udev/hwdb.d/90-custom-keyboard.hwdb
-Example for swapping keys (e.g., keycode 58 to keycode 1):
+de → German layout
 
-evdev:input:b0003vXXXXpYYYY*
- KEYBOARD_KEY_3a=esc
-Then run:
-sudo systemd-hwdb update
-sudo udevadm trigger
-⌨️ Custom Key Bindings (depends on environment)
-If using i3 window manager:
- your config (~/.config/i3/config):
+ru → Russian Cyrillic layout
 
-bindsym $mod+Return exec alacritty
-bindsym $mod+d exec rofi -show run
-Then reload i3:
+dvorak → Dvorak English layout
 
-Mod+Shift+R
-If using GNOME:
-Go to Settings > Keyboard Shortcuts, or use:
+us(intl) → US International (for typing accented characters)
 
-gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings ...
-If using KDE/Plasma:
-Go to System Settings > Shortcuts.
+These layouts are defined in XKB configuration files, typically
+located at:
 
-If using Xfce:
-Go to Settings > Keyboard > Application Shortcuts.
+bash
+Copy code
+/usr/share/X11/xkb/
+🔹 Key Components of XKB
+XKB configurations are split into several components:
 
-🛠 For Advanced Needs:
-sxhkd – Simple hotkey daemon, popular with bspwm or standalone setups.
+Keycodes – mapping between physical keys and symbolic key names
 
-Config in ~/.config/sxhkd/sxhkdrc
+Symbols – mapping of symbolic key names to character output (layout)
 
-Example:
+Types – defines how modifier keys affect key behavior
 
-super + Return
-    alacritty
-interception-tools + caps2esc – For powerful remapping like Vim-style Esc from Caps Lock.
+Compat – compatibility rules for legacy behavior
 
-📝 Pro Tips
-For Wayland-based sessions (e.g., Sway or GNOME Wayland), tools like xmodmap won't work.
+Geometry – physical layout of the keyboard (used for visualization)
 
-Use keyd or interception-tools for device-level remapping.
+🔹 Switching XKB Layouts
+You can switch layouts dynamically using tools like:
 
-Use showkey (TTY) or evtest to find keycodes if X tools don't work.
+setxkbmap
+Example: setxkbmap us,ru -option grp:alt_shift_toggle
 
-If you tell me your window manager or desktop environment, I can give more tailored instructions.
+Desktop settings in GNOME/KDE
+
+Config files like /etc/X11/xorg.conf or .xinitrc
+
+🔹 Why Use XKB?
+Full control over keyboard layouts and behavior
+
+Supports multiple languages and custom configurations
+
+Essential for users with specific typing needs, languages, or
+accessibility concerns
+
+Let me know if you'd like help customizing or creating an XKB
+layout!
