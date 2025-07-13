@@ -1,18 +1,5 @@
-言語分類考
-10A22515 松浦 義広
-2025年6月26日
-フォントの大きさは
-表やグラフ、例文には番号をつける
-コンパクトに作る
-2行目以降をインデントする
-
-
-0. はじめに
-本発表の目標: 最終的な卒業論文の全体像を整理した上で現在の進捗を示し、今後の方針を示すこと
-本発表の構造: 実際に執筆予定の卒業論文の構成に準ずる
 1. 分類の困難
 1.1. 言語以外の分野における分類とその課題
-
 1.2. 言語の分類とその課題
 2. 分類の方法
 2.1. 言語以外の分野における分類とその課題
@@ -76,20 +63,12 @@ Word-embedding
 使用技術
 bert-base-multilingual-uncased BERTという事前学習済みモデルをベースに作られた 様々な言語を一つの言語モデル扱える数少ないモデル (https://huggingface.co/google-bert/bert-base-multilingual-uncased) 英語(英語圏全域), スペイン語(スペイン語圏全域), ポルトガル語(ブラジル), フランス語(フランス) Python3.12
 手順
-    1. ランダムに英語とロマンス諸語に共通して存在するラテン語由来の単語を列挙する.
-    2. 各ロマンス諸語について "対英類似度" を算出.
-    3. 
+1. ランダムに英語とロマンス諸語に共通して存在するラテン語由来の単語を列挙する.
+2. 各ロマンス諸語について "対英類似度" を算出.
 英語のラテン語由来の単語とある一つのロマンス諸語の対応する単語/フレーズを比較 西-仏, 西-葡, 西-伊…という総当たり方式は煩雑である. 一つのロマンス諸語に一つの値しかないため, 簡便.
 現状の結果の例
 英語句 葡語句 英葡間類似度 西語句 英西間類似度 the actual situation a situação atual 0.9265 la situación actual 0.8173 the American continent o continente americano 0.8631 el continente americano 0.9905 to assist the class assistir à aula 0.9829 asistir a la clase 0.9864 to visit Japan visitar o Japão 0.9903 visitar Japón 0.9941
 スペイン語のactualには, 英語と異なり「現在の」という意味が含まれるため. 英葡辞書(Dicionário Priberam da Língua Portuguesa)では、第一義はactual(実際の), currentは第二義だった. 本来, スペイン語でもポルトガル語でもamericanoは南北アメリカ大陸を指すが, 近年のU.S.ではアメリカ合衆国のことをAmericanと 呼ぶようになり, メキシコなどではスペイン語でもestadounidenseではなくamericanoと呼ぶようになってきている(Scholz,2019)
-今後の見通し
-データの充実
-語彙の充実, 対応言語の増加(イタリア語, ルーマニア語)
-算出方法の検討
-語彙の偏りの排除
-ラテン語を基準にした比較
-対英よりも多くの単語が比較可能, 英語を基準にすると基礎語彙の比較が困難
 言語分類のパラダイムのまとめ
 以上2つのパラダイムを以下の表にまとめる。
 系統言語学 言語類型論 系統関係を重視するか否か 重視する 重視しない 関わりの深い言語学領域 比較言語学 対照言語学
@@ -141,6 +120,3 @@ Appendix: 仮説上の祖語が再建されている語族
 ここに挙げた物は、非常に簡略化されており、理想とするMECEな分類とは言えないことを警告する。
 以下の分類方法は、数多くある分類方法の中の、ある一例に過ぎない。
 分類カテゴリー 下位分類 特徴・説明 言語例 基本語順による分類 SOV 主語-目的語-動詞の語順 日本語、韓国語、トルコ語、ヒンディー語 SVO 主語-動詞-目的語の語順 英語、中国語、フランス語、スペイン語 VSO 動詞-主語-目的語の語順 ウェールズ語、アラビア語、マヤ語 VOS 動詞-目的語-主語の語順 マダガスカル語、フィジー語 OVS 目的語-動詞-主語の語順 ヒシカリアーナ語（ブラジル） OSV 目的語-主語-動詞の語順 ワラオ語（ベネズエラ） 形態的分類 孤立語 語形変化がほとんどなく、単語が独立的 中国語、ベトナム語 膠着語 語根に語尾を順次付加して語を形成 日本語、韓国語、トルコ語、フィンランド語 屈折語 語根内部の音変化で文法関係を表現 ラテン語、ドイツ語、ロシア語 抱合語 複数の語幹を一つの語に統合 イヌイット語、ナバホ語 音韻論的分類 声調言語 音の高低が語の意味を区別 中国語、ベトナム語、タイ語、ヨルバ語 非声調言語 音の高低が語彙的意味を持たない 日本語、英語、ドイツ語、スペイン語 単純音節構造 CV型などの単純な音節構造 日本語、ハワイ語 複雑音節構造 子音クラスターを許容 英語、ドイツ語、ロシア語 統語論的分類 格標示型 名詞の格変化で統語関係を表示 ラテン語、ドイツ語、日本語 語順型 語順で統語関係を表示 英語、中国語 語頭標示 句の最初の語に統語情報が集中 ウェールズ語、ナバホ語 語尾標示 句の最後の語に統語情報が集中 日本語、トルコ語 形態統語的分類 能格言語 自動詞主語と他動詞目的語を同じ格で標示 バスク語、グルジア語、イヌイット語 対格言語 自動詞主語と他動詞主語を同じ格で標示 英語、日本語、ドイツ語、ラテン語 活格言語 動詞の能動性に基づいて主語を標示 チェロキー語、ラコタ語
-参考文献
-
-Asgari, E., & Mofrad, M. (2016). Comparing Fifty Natural Languages and Twelve Genetic Languages Using Word Embedding Language Divergence (WELD) as a Quantitative Measure of Language Distance. ArXiv, abs/1604.08561. https://doi.org/10.18653/v1/W16-1208. Barry Chiswick, & Paul Miller (2005). Linguistic Distance: A Quantitative Measure of the Distance Between English and Other Languages Chiswick, B., & Miller, P. (2004). Linguistic Distance: A Quantitative Measure of the Distance Between English and Other Languages. Journal of Multilingual and Multicultural Development, 26, 1 - 11. https://doi.org/10.1080/14790710508668395. Downey, S., Sun, G., & Norquest, P. (2016). AlineR: An R Package for Optimizing Feature-Weighted Alignments and Linguistic Distances. Biology & Anthropology eJournal. https://doi.org/10.32614/RJ-2017-005. Fan, L., & Jiang, Y. (2019). Can dependency distance and direction be used to differentiate translational language from native language?. Lingua. https://doi.org/10.1016/J.LINGUA.2019.03.004. Pablo Gamallo, & José Ramom Pichel, I. Alegria (2017). "From language identification to language distance." Physica A-statistical Mechanics and Its Applications Petroni, F., & Serva, M. (2008). Language distance and tree reconstruction. Journal of Statistical Mechanics: Theory and Experiment, 2008, P08012. https://doi.org/10.1088/1742-5468/2008/08/P08012. Scholz, B. (2019). The role of paratexts in the transmission of knowledge in the early modern world. Berliner Beiträge zur Iberoamerika-Forschung, 122, 99-109. Retrieved from https://publications.iai.spk-berlin.de/servlets/MCRFileNodeServlet/Document_derivate_00001044/BIA_122_099_109.pdf (Accessed 19th Jul. 2024) 岡﨑 直観, 荒瀬 由紀, 鈴木潤.(2022) 『自然言語処理の基礎』オーム社. 湯川恭敏 (2011) 『バントゥ諸語分岐史の研究』ひつじ書房. 参考文献 英語文献 Araszkiewicz, M., Banaś, P., Gizbert-Studnicki, T., & Płeszka, K. (2015). Text and image in traffic signs. In Problems of Normativity, Rules and Rule-Following. Springer. Asgari, E., & Mofrad, M. (2016). Comparing fifty natural languages and twelve genetic languages using word embedding language divergence (WELD) as a quantitative measure of language distance. ArXiv, abs/1604.08561. https://doi.org/10.18653/v1/W16-1208 Blust, R. (2013). The Austronesian languages. Asia-Pacific Linguistics. Brentari, D. (1998). A prosodic model of sign language phonology. MIT Press. Campbell, L. (2013). Historical linguistics: An introduction (3rd ed.). MIT Press. Chambers, J. K., & Trudgill, P. (1998). Dialectology (2nd ed.). Cambridge University Press. Chiswick, B., & Miller, P. (2004). Linguistic distance: A quantitative measure of the distance between English and other languages. Journal of Multilingual and Multicultural Development, 26, 1-11. https://doi.org/10.1080/14790710508668395 Chiswick, B., & Miller, P. (2005). Linguistic distance: A quantitative measure of the distance between English and other languages. Comrie, B. (1989). Language universals and linguistic typology (2nd ed.). University of Chicago Press. Croft, W. (2003). Typology and universals (2nd ed.). Cambridge University Press. de Saussure, F. (1916). Cours de linguistique générale. Paris: Payot. Downey, S., Sun, G., & Norquest, P. (2016). AlineR: An R package for optimizing feature-weighted alignments and linguistic distances. Biology & Anthropology eJournal. https://doi.org/10.32614/RJ-2017-005 Fan, L., & Jiang, Y. (2019). Can dependency distance and direction be used to differentiate translational language from native language? Lingua. https://doi.org/10.1016/J.LINGUA.2019.03.004 Fitch, W. T. (2010). The evolution of language. Cambridge University Press. Gamallo, P., Pichel, J. R., & Alegria, I. (2017). From language identification to language distance. Physica A: Statistical Mechanics and Its Applications, 484, 152-162. https://doi.org/10.1016/j.physa.2017.05.011 Georg, S., Michalove, P. A., Manaster Ramer, A., & Sidwell, P. J. (1999). Telling general linguists about Altaic. Journal of Linguistics, 35(1), 65-98. Haspelmath, M., Dryer, M. S., Gil, D., & Comrie, B. (Eds.). (2005). The world atlas of language structures. Oxford University Press. Hockett, C. F. (1960). The origin of speech. Scientific American, 203(3), 88-96. Hockett, C. F., & Altmann, S. A. (1968). A note on design features. In T. Sebeok (Ed.), Animal communication (pp. 61-72). Indiana University Press. Hudson, R. A. (1996). Sociolinguistics (2nd ed.). Cambridge University Press. Hurford, J. R. (2007). The origins of meaning: Language in the light of evolution. Oxford University Press. Leone, M. (2021). The semiotics of flags. Springer. Mallory, J. P., & Adams, D. Q. (2006). The Oxford introduction to Proto-Indo-European and the Proto-Indo-European world. Oxford University Press. Petroni, F., & Serva, M. (2008). Language distance and tree reconstruction. Journal of Statistical Mechanics: Theory and Experiment, 2008, P08012. https://doi.org/10.1088/1742-5468/2008/08/P08012 Robbeets, M. (2005). Is Japanese related to Korean, Tungusic, Mongolic and Turkic? Harrassowitz Verlag. Sandler, W. (2017). The challenge of sign language phonology. Annual Review of Linguistics, 3, 43-63. https://doi.org/10.1146/annurev-linguistics-011516-034122 Sandler, W., & Lillo-Martin, D. (2006). Sign language and linguistic universals. Cambridge University Press. S­

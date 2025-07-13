@@ -4,6 +4,7 @@
 
 ## Information to include
 ### External information
+Non-e
 1. Current number of speakers
 1. Geographic distribution
 1. Historical evolution
