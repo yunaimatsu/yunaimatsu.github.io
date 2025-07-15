@@ -1,0 +1,1 @@
+# Minangkabau script(Islam_Malay script)

@@ -1,0 +1,1 @@
+# Arwi(Arabu_Tamil) script
