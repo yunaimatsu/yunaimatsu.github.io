@@ -1,1 +1,0 @@
-The Faliscan language is the extinct Italic language of the ancient Falisci, who lived in southern Etruria at Tiber Valley. Together with Latin, it formed the Latino-Faliscan languages group of the Italic languages. It seems probable that the language persisted, being gradually permeated with Latin, until at least 150 BC.
