@@ -1,0 +1,5 @@
+# Limit of each function
+
+[三角関数の極限](Limit%20of%20each%20function%208a7c2ba7ca82497c993e4f295f145637/%E4%B8%89%E8%A7%92%E9%96%A2%E6%95%B0%E3%81%AE%E6%A5%B5%E9%99%90%205f5c300256b34ffea2b06c07834950c7.md)
+
+[指数対数関数の極限](Limit%20of%20each%20function%208a7c2ba7ca82497c993e4f295f145637/%E6%8C%87%E6%95%B0%E5%AF%BE%E6%95%B0%E9%96%A2%E6%95%B0%E3%81%AE%E6%A5%B5%E9%99%90%20c39d36d3ae7b450ab47bd5dd37dbdf48.md)

@@ -1,0 +1,1 @@
+# System of n linear equations with n variables

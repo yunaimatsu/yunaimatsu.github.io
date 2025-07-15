@@ -1,0 +1,11 @@
+# Deferential calculus & its application
+
+[微分係数と導関数](Deferential%20calculus%20&%20its%20application%204acad6a6015c4000a6b815e5371294b3/%E5%BE%AE%E5%88%86%E4%BF%82%E6%95%B0%E3%81%A8%E5%B0%8E%E9%96%A2%E6%95%B0%20a095f3a7021a4ed6809870fc575ad8a4.md)
+
+[微分計算](Deferential%20calculus%20&%20its%20application%204acad6a6015c4000a6b815e5371294b3/%E5%BE%AE%E5%88%86%E8%A8%88%E7%AE%97%20a563a3b1d8f849d99ee1427bfb049618.md)
+
+[ロピタルの定理と関数の極限](Deferential%20calculus%20&%20its%20application%204acad6a6015c4000a6b815e5371294b3/%E3%83%AD%E3%83%92%E3%82%9A%E3%82%BF%E3%83%AB%E3%81%AE%E5%AE%9A%E7%90%86%E3%81%A8%E9%96%A2%E6%95%B0%E3%81%AE%E6%A5%B5%E9%99%90%20bc1c06b6c3aa4a75897b968386701a20.md)
+
+[微分法と関数のグラフ](Deferential%20calculus%20&%20its%20application%204acad6a6015c4000a6b815e5371294b3/%E5%BE%AE%E5%88%86%E6%B3%95%E3%81%A8%E9%96%A2%E6%95%B0%E3%81%AE%E3%82%AF%E3%82%99%E3%83%A9%E3%83%95%2099058e3e55aa484887e9ac3d7dd1a913.md)
+
+[テイラー展開・マクローリン展開](Deferential%20calculus%20&%20its%20application%204acad6a6015c4000a6b815e5371294b3/%E3%83%86%E3%82%A4%E3%83%A9%E3%83%BC%E5%B1%95%E9%96%8B%E3%83%BB%E3%83%9E%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AA%E3%83%B3%E5%B1%95%E9%96%8B%20f29a74a9c4134044a2e55d4049120a64.md)

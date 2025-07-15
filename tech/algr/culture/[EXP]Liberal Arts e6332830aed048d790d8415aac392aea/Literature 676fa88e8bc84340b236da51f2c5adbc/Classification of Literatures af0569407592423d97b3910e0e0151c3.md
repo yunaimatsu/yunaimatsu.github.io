@@ -1,0 +1,5 @@
+# Classification of Literatures
+
+[Feature Structure](Classification%20of%20Literatures%20af0569407592423d97b3910e0e0151c3/Feature%20Structure%20b7e04cfab2694728a0ec82b782f2edec.md)
+
+[Folklore Studies](Classification%20of%20Literatures%20af0569407592423d97b3910e0e0151c3/Folklore%20Studies%20c3b4e597fd244df1a46b581f0603c45d.md)

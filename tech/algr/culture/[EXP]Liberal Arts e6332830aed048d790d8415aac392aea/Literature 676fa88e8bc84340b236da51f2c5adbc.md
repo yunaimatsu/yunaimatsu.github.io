@@ -1,0 +1,17 @@
+# Literature
+
+[](Literature%20676fa88e8bc84340b236da51f2c5adbc/Untitled%20dfe2bd2522b54d15ae3580586367e54d.md)
+
+[Novel](Literature%20676fa88e8bc84340b236da51f2c5adbc/Novel%20a0ba832ab3784d29a503f124fa598df7.md)
+
+[Translation](Literature%20676fa88e8bc84340b236da51f2c5adbc/Translation%20cd34c8ea03334ee2b366ff96828f1c35.md)
+
+[Essay ](Literature%20676fa88e8bc84340b236da51f2c5adbc/Essay%20640c4e0a6a3843779da74cb106bb9acb.md)
+
+[History of Literature](Literature%20676fa88e8bc84340b236da51f2c5adbc/History%20of%20Literature%20a948e7b1b9e446ed8482ce112f8a755f.md)
+
+[Classification of Literatures](Literature%20676fa88e8bc84340b236da51f2c5adbc/Classification%20of%20Literatures%20af0569407592423d97b3910e0e0151c3.md)
+
+[Latin Literature](Literature%20676fa88e8bc84340b236da51f2c5adbc/Latin%20Literature%20f17a621bfd4843f8a70116df05a1bfea.md)
+
+[Spanish Literature](Literature%20676fa88e8bc84340b236da51f2c5adbc/Spanish%20Literature%205f7c2ef01fe0446484688ce8735ab727.md)

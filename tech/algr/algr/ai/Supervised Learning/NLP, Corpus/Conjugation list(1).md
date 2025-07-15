@@ -1,0 +1,12 @@
+﻿Name,1SG,2SG,3SG,1PL,2PL,3PL
+Hablar,,,,,,
+,,,,,,
+,,,,,,
+,"1人称単数は
+hablamosだよ","hablas
+だよ",habla,"hablamos
+だよ",habláisじゃよ,3人称複数hablan！
+,"1人称単数は
+vivimosだよ","vives
+だよ",vive,"vivimos
+だよ",vivísじゃよ,3人称複数viven！

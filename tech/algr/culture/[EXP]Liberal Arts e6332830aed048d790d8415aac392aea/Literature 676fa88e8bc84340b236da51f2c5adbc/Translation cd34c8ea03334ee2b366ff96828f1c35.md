@@ -1,0 +1,3 @@
+# Translation
+
+[Battotai](Translation%20cd34c8ea03334ee2b366ff96828f1c35/Battotai%206070a97fdfb44ca1bd4b2aa747fab180.md)

@@ -1,0 +1,3 @@
+# representation theory
+
+**表現論**とは、ベクトル空間の線型変換として代数構造を表現することで代数構造上の[加群](https://ja.wikipedia.org/wiki/%E7%92%B0%E4%B8%8A%E3%81%AE%E5%8A%A0%E7%BE%A4)を研究する数学の一分野である。本質的には、表現は抽象的な代数的構造を、その元と演算を[行列](https://ja.wikipedia.org/wiki/%E8%A1%8C%E5%88%97)と[行列の和](https://ja.wikipedia.org/wiki/%E8%A1%8C%E5%88%97#%E5%92%8C%E3%83%BB%E7%A9%8D)や[行列の積](https://ja.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E3%81%AE%E7%A9%8D)で記述することで、より具体的にする。
