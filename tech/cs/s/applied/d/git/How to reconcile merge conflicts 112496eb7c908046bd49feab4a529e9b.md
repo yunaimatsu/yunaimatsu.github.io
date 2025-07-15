@@ -1,0 +1,1 @@
+# How to reconcile merge conflicts

@@ -1,0 +1,3 @@
+## Register
+
+Memory inside CPU
