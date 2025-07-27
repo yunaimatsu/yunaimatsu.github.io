@@ -1,3 +1,0 @@
-# eclipse
-
-javaのエディタ。

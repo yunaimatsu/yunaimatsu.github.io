@@ -1,1 +1,0 @@
-sudo dd if=alpine-auto.iso of=/dev/sdX bs=4M status=progress && sync

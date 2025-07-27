@@ -1,3 +1,0 @@
-# eraser
-
-Price: 70

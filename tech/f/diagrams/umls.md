@@ -1,1 +1,0 @@
-UML book by [Martin Fowler](https://martinfowler.com/)
