@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>yunai</title>
+</head>
+<body><body>
+  <ul id="sns-links"></ul>
+  <script>
+    const snsData = [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/yourusername"
+      },
+      {
+        "name": "Facebook",
+        "url": "https://facebook.com/yourusername"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://instagram.com/yourusername"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/yunaimatsu"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://youtube.com/@yunaimatsu"
+      }
+    ];
+    const ul = document.getElementById('sns-links');
+
+    snsData.forEach(sns => {
+      // Create <li> and <a>
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = sns.url;
+      a.textContent = sns.name;
+      a.target = "_blank";
+      a.rel = "noopener";
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+  </script>
+</ul>
+</body>
+</html>
