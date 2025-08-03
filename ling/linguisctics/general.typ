@@ -77,6 +77,9 @@
   - 公用語(official language): 行政期間が公的なレジストリで用いる言語変種。
   - 国語(national language): その国を象徴する言語変種
 *第二言語習得 (第二言語習得論)* : \
+*標準語 (standard language)* : \
+*中間言語 (interlanguage)* : \
+*リテラシー*
 
 - 3.2. 個人の言語選択(code switching)\
 
@@ -91,7 +94,10 @@
 新しい婉曲語法の成立を通して、同じ対象でも複数通りの言い方が生まれるようになる。\
 つまり、実際に指示されるものdenotationconnotation
 
+*場面 (communication)* : \
 
+*禁忌(タブー) (taboo)* : \
+*foreigner talk*
 - 狭義 (直接言及することがタブー視されている物事に別の語句・表現を用いること)
   - 忌まわしいもの (病気・死)
   - 不浄なもの (排泄)
@@ -108,6 +114,8 @@
 *言語政策  (language policy)* : \
 *言語接触 (language contact)* :\
 - *接触言語 (contact language)* : \
+*方言 (dialect)*
+*方言接触 (dialect contact)*
 *言語変数 (linguistic variable)* : \
 *参与観察 (participant observation)* : \
 *スタイル (style)* : \
@@ -116,12 +124,15 @@
 - *精密コード (elaborated code)* : \
 - *限定コード (restricted code)* : \
 
+*変異理論(variation theory)*
+
 #pagebreak()
 === 3. 特に関心のある事項について、調べたことを書く\
 私が特に関心があるのは、言語間の類似度を定量的に表す方法だ。\
 「すべての言語を一貫した基準で分類できないか」ということだ。\
 「2.\ 自分が疑問に思ったことを取り上げて考察する」において言語分類に関する考察を述べた。\
 系統論と類型論それぞれの\
+*伝達能力 (communicative competence)* : \
 
 #pagebreak()
 *【課題2】* \
