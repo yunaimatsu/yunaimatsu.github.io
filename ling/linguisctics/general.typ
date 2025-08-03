@@ -51,6 +51,8 @@
 - dialect continuum\
 
 ==== b. 社会言語学 (言語の階層と言語選択) \
+*アイデンティティ*\
+*言語共同体*\
 *威信 (prestige)* : ある社会において、ある言語変種に与えられるプラスの評価。\
 威信には下記の2種類が存在する。\
 *顕在的威信 (Overt prestige)* : 公的な場において「正しい」とされることば遣いに与えられる評価。\
@@ -58,6 +60,7 @@
 *潜在的威信 (Covert prestige)* : 特定のグループ内部で「正しい」とされることば遣いに与えられる評価。\
 - 変種には通常低い評価が特定集団の独自性・連帯感を強化する。\
 一般的に、顕在的威信は標準語化に、潜在的威信は方言維持に寄与する。\
+*共通語 (common language) *\
 
 複数の言語変種が共存している時、言語\
 - トラッドギル『言語と社会』_"Sociolinguistics: An Introduction to Language and Society"_
@@ -90,8 +93,17 @@
   - 不浄なもの (排泄)
   - 恐れ多いもの (神)
 - 広義\
-過剰修正 (overcorrection)
-
+*過剰修正 (overcorrection)* : 
+*ジェンダー*
+*規範 (norm)* : \
+*言語イデオロギー (language ideology)* :\
+*言語権 (language rights)* :\
+*言語行動 (language behavior)*: \
+*言語使用領域 (domain)* :\
+*言語政策  (language policy)* : \
+*言語接触 (language contact)* :\
+*言語変数 (linguistic variable)* : \
+*参与観察 (participant observation)* : \
 
 #pagebreak()
 === 3. 特に関心のある事項について、調べたことを書く\
