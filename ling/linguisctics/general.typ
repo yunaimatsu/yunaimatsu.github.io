@@ -67,6 +67,8 @@
 
 複数の言語が話される社会では、複数の言語変種が存在し、それらが使い分けられている。  
 - diaglossia(c.ferguson) 
+- bilingualism\
+- multilingualism \
 - variety/code
 - polyglossia
 
@@ -74,6 +76,7 @@
   - 母語(mother language): 個人が、生まれて最初に習得する言語変種
   - 公用語(official language): 行政期間が公的なレジストリで用いる言語変種。
   - 国語(national language): その国を象徴する言語変種
+*第二言語習得 (第二言語習得論)* : \
 
 - 3.2. 個人の言語選択(code switching)\
 
@@ -88,6 +91,7 @@
 新しい婉曲語法の成立を通して、同じ対象でも複数通りの言い方が生まれるようになる。\
 つまり、実際に指示されるものdenotationconnotation
 
+
 - 狭義 (直接言及することがタブー視されている物事に別の語句・表現を用いること)
   - 忌まわしいもの (病気・死)
   - 不浄なもの (排泄)
@@ -95,6 +99,7 @@
 - 広義\
 *過剰修正 (overcorrection)* : 
 *ジェンダー*
+*俗語 (slang)* : \
 *規範 (norm)* : \
 *言語イデオロギー (language ideology)* :\
 *言語権 (language rights)* :\
@@ -102,8 +107,14 @@
 *言語使用領域 (domain)* :\
 *言語政策  (language policy)* : \
 *言語接触 (language contact)* :\
+- *接触言語 (contact language)* : \
 *言語変数 (linguistic variable)* : \
 *参与観察 (participant observation)* : \
+*スタイル (style)* : \
+*ステレオタイプ (stereotype)* : \
+*Communication type* : \
+- *精密コード (elaborated code)* : \
+- *限定コード (restricted code)* : \
 
 #pagebreak()
 === 3. 特に関心のある事項について、調べたことを書く\
