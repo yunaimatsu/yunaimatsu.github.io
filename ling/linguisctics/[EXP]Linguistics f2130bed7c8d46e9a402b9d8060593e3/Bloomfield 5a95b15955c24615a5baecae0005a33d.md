@@ -1,5 +1,0 @@
-# Bloomfield
-
-[『言語』Bloomfield](Bloomfield%205a95b15955c24615a5baecae0005a33d/%E3%80%8E%E8%A8%80%E8%AA%9E%E3%80%8FBloomfield%20741c9070a8644288a50dbd2049727242.md)
-
-[『言語学Ⅰ』p.24, 25](Bloomfield%205a95b15955c24615a5baecae0005a33d/%E3%80%8E%E8%A8%80%E8%AA%9E%E5%AD%A6%E2%85%A0%E3%80%8Fp%2024,%2025%20a71f5b074a0149bbb79ccdffeb286612.md)
