@@ -1,4 +1,3 @@
-
 ## In terminal
 
 <aside>
@@ -261,17 +260,17 @@ part which **can** be edited on other html files
 
 ```html
 <!-- @base.html -->
-<div class="container">{% block content %}{% endblock %}</div>
+<div class="container">{\% block content \%}{\% endblock \%}</div>
 ```
 
 ## @indivisual.html
 
 ```html
-{% extends "base.html" %} {% block content %}
+{\% extends "base.html" \%} {\% block content \%}
 	<div>
 		<h1>You can write here</h1>
 	</div>
-{% endblock %}
+{\% endblock \%}
 ```
 
 # build db
