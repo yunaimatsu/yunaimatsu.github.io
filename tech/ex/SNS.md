@@ -1,5 +1,0 @@
-# SNS
-
-Decentralized SNS
-
-fediverse

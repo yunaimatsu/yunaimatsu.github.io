@@ -1,1 +1,0 @@
-[Adga](Math,%20Statistics,%20Data-processing%20-info%20f2659a86d15c46b481985677d798ee53/Adga%20d7f00147f81245569097a951f10b93d1.md)
