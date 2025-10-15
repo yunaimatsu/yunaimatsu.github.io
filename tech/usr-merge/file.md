@@ -1,0 +1,11 @@
+  - ELF: Executable and Linkable Format (standard binary format on Linux)
+  - 64-bit: Runs on 64-bit architecture
+  - LSB: Least Significant Byte first (little-endian byte order)
+  - pie executable: Position Independent Executable (can be loaded at any memory address for security/ASLR)
+  - x86-64: Intel/AMD 64-bit instruction set
+  - version 1 (SYSV): ELF version 1, System V ABI
+  - dynamically linked: Uses shared libraries (not statically compiled)
+  - interpreter /lib64/ld-linux-x86-64.so.2: Dynamic linker that loads shared libraries at runtime
+  - BuildID[sha1]=...: Unique identifier for this build
+  - for GNU/Linux 4.4.0: Minimum kernel version required
+  - stripped: Debug symbols removed (smaller file, harder to debug)

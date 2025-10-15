@@ -1,5 +1,0 @@
-# Machine Language
-
-数字の羅列。そのCommand達にニックネームつけたのがassembler
-
-[Assembler](Machine%20Language%206be9406b6a4b40429289a84f2989ee2b/Assembler%2051063e5244e24efe9c0f10d195a8a2a9.md)

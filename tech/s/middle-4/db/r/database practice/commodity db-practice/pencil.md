@@ -1,3 +1,0 @@
-# pencil
-
-Price: 10
