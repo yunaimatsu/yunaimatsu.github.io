@@ -1,0 +1,1 @@
+an archaic Latino-Faliscan language. sIt was spoken by Latins who lived close to Rome and could have been a dialect of Latin.

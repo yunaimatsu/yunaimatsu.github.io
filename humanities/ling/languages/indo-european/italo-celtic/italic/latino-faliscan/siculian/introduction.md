@@ -1,0 +1,1 @@
+Siculian (or Sicel) is an extinct Indo-European language spoken in central and eastern Sicily by the Sicels. It is attested in fewer than thirty inscriptions in eastern Sicily from the late 6th century to 4th century BCE, and in around twenty-five glosses from ancient writers.

@@ -1,0 +1,1 @@
+an archaic form of Latino-Faliscan. It was spoken in eastern Old Latium in modern day Lazio, Italy.

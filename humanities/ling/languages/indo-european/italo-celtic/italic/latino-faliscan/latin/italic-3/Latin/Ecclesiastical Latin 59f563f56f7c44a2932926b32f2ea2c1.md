@@ -1,0 +1,3 @@
+# Ecclesiastical Latin
+
+Latina Ecclesiastica
