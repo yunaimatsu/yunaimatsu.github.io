@@ -41,3 +41,4 @@ customElements.define("my-component", MyComponent);
 ```
 
 自分でHTML要素を作る
+In Vanilla JS (with <script type="module"> or <script>), the order of <script> relative to your custom elements in HTML matters.

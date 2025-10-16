@@ -1,12 +1,22 @@
-# ECMAScript
+[REPL JS](https://repljs.com/)
 
-[Documentation -JS](ECMAScript%20b78cfa33c7654aacbc4adac25b312872/Documentation%20-JS%20120496eb7c9080e3bde9ec6008e9a771.md)
+# Large-scale Dev
+
+Verb
+mh
+[Exportion ](https://www.notion.so/Exportion-11a496eb7c90802bab8cf9a0168ed41b?pvs=21)
+
+[Importion](https://www.notion.so/Importion-11a496eb7c90801c9d3bc28bd8c1f820?pvs=21)
+
+Noun
+
+[Module](https://www.notion.so/Module-11a496eb7c9080d1a4d4c8dddc27fd0a?pvs=21)
 
 # Execution Environment
 
-[Browser](Browser%208e0b390f39294b76a38d3c65956d6c47.md)
+[Browser](https://www.notion.so/Browser-8e0b390f39294b76a38d3c65956d6c47?pvs=21)
 
-[Node.js](ECMAScript%20b78cfa33c7654aacbc4adac25b312872/Node%20js%20e33a305ff9374888ae898195a7565a17.md)
+[Node.js](https://www.notion.so/Node-js-e33a305ff9374888ae898195a7565a17?pvs=21)
 
 # Structure
 
@@ -14,34 +24,48 @@
 2. Declaration
 3. Essence
 
-[Operator -JS](ECMAScript%20b78cfa33c7654aacbc4adac25b312872/Operator%20-JS%20a1a88ba237a54b0b9d4be396649950d8.md)
+## Importion, Exportion
+
+## Declaration of Data
+
+**Verb**
+
+[Methods -JS](https://www.notion.so/Methods-JS-16c683c3878e4d9bba332f444f5bacae?pvs=21)
+
+[Operator -JS](https://www.notion.so/Operator-JS-a1a88ba237a54b0b9d4be396649950d8?pvs=21)
 
 **Noun**
 
-[Data type -JS](ECMAScript%20b78cfa33c7654aacbc4adac25b312872/Data%20type%20-JS%20e3e7bcf9752a4eb58f079adc2827809e.md)
+[Variable/Constant -JS](https://www.notion.so/Variable-Constant-JS-ecbd7815b45b4247934337c52be24a26?pvs=21)
+
+[Data type -JS](https://www.notion.so/Data-type-JS-e3e7bcf9752a4eb58f079adc2827809e?pvs=21)
+
+[Class -JS](https://www.notion.so/Class-JS-11e496eb7c908084b719d199cef79dd1?pvs=21)
+
+[Scope -JS](https://www.notion.so/Scope-JS-11b496eb7c90805799bce5de1f65f0ed?pvs=21)
 
 ## Essence (control structure)
 
 ### Discipline
 
-[[Thread] Synchronous and Asynchronous processing -JS](ECMAScript%20b78cfa33c7654aacbc4adac25b312872/%5BThread%5D%20Synchronous%20and%20Asynchronous%20processing%20-%2011b496eb7c9080babab7f9c4ebd00dbc.md)
+[[Thread] Synchronous and Asynchronous processing -JS](https://www.notion.so/Thread-Synchronous-and-Asynchronous-processing-JS-11b496eb7c9080babab7f9c4ebd00dbc?pvs=21)
 
-[Sequential](ECMAScript%20b78cfa33c7654aacbc4adac25b312872/Sequential%20120496eb7c908061b5cbfb71638591db.md)
+[Sequential](https://www.notion.so/Sequential-120496eb7c908061b5cbfb71638591db?pvs=21)
 
-[Conditional branch](ECMAScript%20b78cfa33c7654aacbc4adac25b312872/Conditional%20branch%20120496eb7c9080128730d43232b7cdf6.md)
+[Conditional branch](https://www.notion.so/Conditional-branch-120496eb7c9080128730d43232b7cdf6?pvs=21)
 
 ### Functionalities which violate the discipline but are necessary
 
-[Exception handling](ECMAScript%20b78cfa33c7654aacbc4adac25b312872/Exception%20handling%20120496eb7c90801fba3beac4024b3939.md)
+[Exception handling](https://www.notion.so/Exception-handling-120496eb7c90801fba3beac4024b3939?pvs=21)
 
-[Iteration](ECMAScript%20b78cfa33c7654aacbc4adac25b312872/Iteration%2011e496eb7c9080cd9423cfee7fbc56bd.md)
+[Iteration](https://www.notion.so/Iteration-11e496eb7c9080cd9423cfee7fbc56bd?pvs=21)
 
 ---
 
 > Orthography
 > 
 
-[Orthographic rules -JS](ECMAScript%20b78cfa33c7654aacbc4adac25b312872/Orthographic%20rules%20-JS%208f25c20ee59946388665693737178f68.md)
+[Orthographic rules -JS](https://www.notion.so/Orthographic-rules-JS-8f25c20ee59946388665693737178f68?pvs=21)
 
 Declaration and call
 
@@ -67,9 +91,9 @@ declaration: static
     
 - However, in reality, there are several examples where this rule is not followed.
     
-    [Call of function](ECMAScript%20b78cfa33c7654aacbc4adac25b312872/Call%20of%20function%2011f496eb7c9080caa17afa86c7f3185f.md)
+    [Call of function](https://www.notion.so/Call-of-function-11f496eb7c9080caa17afa86c7f3185f?pvs=21)
     
-    [Break/Continue](ECMAScript%20b78cfa33c7654aacbc4adac25b312872/Break%20Continue%2011f496eb7c9080b990aeff3a240ad8ee.md)
+    [Break/Continue](https://www.notion.so/Break-Continue-11f496eb7c9080b990aeff3a240ad8ee?pvs=21)
     
     - Goto-sentence: `Strictly prohibited`
     
@@ -88,4 +112,4 @@ declaration: static
 
 ---
 
-[External history of JavaScript](ECMAScript%20b78cfa33c7654aacbc4adac25b312872/External%20history%20of%20JavaScript%200e12fdd92bf343c4bda3425f9a43643f.md)
+[External history of JavaScript](https://www.notion.so/External-history-of-JavaScript-0e12fdd92bf343c4bda3425f9a43643f?pvs=21)
