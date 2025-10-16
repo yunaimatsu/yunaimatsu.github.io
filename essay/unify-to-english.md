@@ -1,5 +1,0 @@
-- Stay up-to-date with the latest information in English
-- Efficiency
-    - Unnecesity of language-switch
-    - Searchability
-        - Absence of diacritical marks
