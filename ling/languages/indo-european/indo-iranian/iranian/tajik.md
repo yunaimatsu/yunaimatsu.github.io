@@ -1,3 +1,0 @@
-# Tajik
-
-[Tajik](Tajik%209f5d8ea8e57142779b2a653486eff07c/Tajik%203f3016e1065349b794077c4b8bca817b.md)

@@ -1,3 +1,0 @@
-# Nordic
-
-[Swedish](Nordic%208166c76eb10f4110ae2fa1e4e3488360/Swedish%2001547b47f602470fb29887d70818f9d8.md)

@@ -1,5 +1,0 @@
-# Samoyedic
-
-[Northern Samoyedic](Samoyedic%205da50492eeef4fa9bf399fd8cfb379bc/Northern%20Samoyedic%2072c146001f0546a2918f2371f6befe3e.md)
-
-[Southern Samoyedic](Samoyedic%205da50492eeef4fa9bf399fd8cfb379bc/Southern%20Samoyedic%20859e91ea679a483dac061d6fd85b2e09.md)

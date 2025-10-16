@@ -1,1 +1,0 @@
-# Arabic_Swahili script

@@ -1,3 +1,0 @@
-# Untitled
-
-Year: 79
