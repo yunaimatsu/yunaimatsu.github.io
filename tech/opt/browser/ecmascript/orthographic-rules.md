@@ -1,3 +1,37 @@
+# Orthographic rules -JS
+
+### Case and width
+
+1. Case sensitivity is distinguished.
+2. Full-width and half-width characters are distinguished.
+3. Half-width spaces, tabs (indents), and line breaks (if between sentences, they help distinguish different sentences) are ignored.
+
+### `;` and line break
+
+1. `;` is used to separate sentences on the same line.
+2. If there is a line break between sentences, it is considered a different sentence even without `;`.
+
+### Commenting out (in VS Code or Cursor, use `CMD`+`/`)
+
+1. Single line `//`
+2. Multi-line `/* */`
+
+### Case and width
+
+1. Case sensitivity is distinguished.
+2. Full-width and half-width characters are distinguished.
+3. Half-width spaces, tabs (indents), and line breaks (if between sentences, they help distinguish different sentences) are ignored.
+
+### `;` and line break
+
+1. `;` is used to separate sentences on the same line.
+2. If there is a line break between sentences, it is considered a different sentence even without `;`.
+
+### Commenting out (in VS Code or Cursor, use `CMD`+`/`)
+
+1. Single line `//`
+2. Multi-line `/* */`
+
 
 JSON(**J**ava**S**cript **O**bject **N**otation)
 

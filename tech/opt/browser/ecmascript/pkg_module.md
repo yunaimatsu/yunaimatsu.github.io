@@ -14,3 +14,20 @@
 [CommonJS](https://www.notion.so/CommonJS-11b496eb7c908048a9b7e642c66d7113?pvs=21)
 
 [ES Modules](https://www.notion.so/ES-Modules-11b496eb7c9080768d65c3039a73a229?pvs=21)
+
+Do the one action from the following 3 methods.
+
+1. Change the file extension `.js` to `.mjs`
+2. Edit `package.json`
+    
+    ```json
+    {
+    	"type": "module"
+    }
+    ```
+    
+3. Add flag in `node` command in CLI
+    
+    ```
+    node main.js --input-type=module
+    ```
